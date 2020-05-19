@@ -1,0 +1,7 @@
+#!/bin/bash
+for i in *.MOD;
+    do name=`echo "${i%.*}"`
+    echo "$name"
+    ffmpeg -y -i "$i" "${name}.mp4"
+    touch -r "$i" "${name}.mp4"
+done
